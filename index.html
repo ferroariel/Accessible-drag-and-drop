@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessible Drag and Drop with Buttons</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <h1>Accessible Drag and Drop</h1>
+    <div id="status" aria-live="assertive" role="alert"></div>
+    <div id="draggable-items" aria-label="Draggable items list">
+        <div id="item1" draggable="true" tabindex="0">
+            Item 1
+            <button class="sr-only" onclick="startDrag('item1')">Drag element</button>
+        </div>
+        <div id="item2" draggable="true" tabindex="0">
+            Item 2
+            <button class="sr-only" onclick="startDrag('item2')">Drag element</button>
+        </div>
+    </div>
+    <div id="dropzone" aria-dropeffect="move" tabindex="0" aria-label="Drop zone">
+        Drop Zone
+        <ul id="dropped-items"></ul>
+        <button class="sr-only" onclick="dropItem()">Drop element here</button>
+    </div>
+    <audio id="drag-sound" style="display: none">
+        <source src="./drag.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="drop-sound" style="display: none">
+        <source src="./drop.mp3" type="audio/mpeg" />
+    </audio>
+    <script src="script.js"></script>
+</body>
+</html>
